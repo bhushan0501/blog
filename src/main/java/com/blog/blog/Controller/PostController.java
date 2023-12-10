@@ -29,7 +29,7 @@ public class PostController {
         return new ResponseEntity<>(createdPost, HttpStatus.CREATED);
     }
 
-    @GetMapping("/user/{userId}/posts")  // Corrected URL pattern
+    @GetMapping("/user/{userId}/posts")
     public ResponseEntity<List<PostDto>> getPostsByUser(@PathVariable Integer userId) {
         List<PostDto> posts = postService.getPostByUser(userId);
         return new ResponseEntity<>(posts, HttpStatus.OK);
